@@ -1,0 +1,21 @@
+<div class="container">
+    <div style="margin-left: 5px; display: flex;">
+        <div class="p-treeSelect">
+            <select pInputText class="md:w-20rem w-full" containerStyleClass="w-full"  placeholder="Sort by">
+                <option value="" disabled selected> Sort by</option>
+                <option *ngFor="let category of categories" value="{{category}}">{{category}}</option>
+            </select>
+        </div>
+        <div style="margin-left: 5px;" class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText placeholder="Global Search" />
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <app-product-card class="col-sm-4" *ngFor="let product of products" [product]="product"></app-product-card>
+        </div>
+
+    </div>
+</div>

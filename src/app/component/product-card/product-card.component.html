@@ -1,0 +1,20 @@
+<mat-card> 
+        <div class="d-flex justify-content-center">
+            <i class="material-icons">sell</i>
+            {{product.category}}
+        </div>
+    
+    <div class="text-center">
+        {{product.inventoryStatus}}
+    </div>
+    
+    <mat-card-content>
+        <mat-card-title class="text-center" style="font-weight: normal;">{{product.name}}</mat-card-title>
+        <mat-card-subtitle class="text-center" style="font-weight: normal;"> <h6>{{product.description}}</h6></mat-card-subtitle>
+        <mat-card-subtitle class="text-center"><p-rating ngModel="{{product.rating}}" [readonly]="true" [cancel]="false"></p-rating></mat-card-subtitle>
+        <div class="d-flex justify-content-center align-items-center">   
+        <p>{{product.price | currency:'$'}}</p>
+            <button style="border: none; border-radius: 5px; background-color: #2251b1;"><i class="material-icons" style="color: #FFF;">shopping_cart</i></button>
+            </div>
+    </mat-card-content>
+</mat-card>
