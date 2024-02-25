@@ -8,7 +8,6 @@ import { AppRoutingModule } from 'app/app-routing.module';
 import { AppComponent } from 'app/app.component';
 import { BaseModule } from 'app/base/base.module';
 import { SharedModule } from 'app/shared/shared.module';
-import { ProductsAdminComponent } from './products-admin/products-admin.component';
 import { ProductsComponent } from './products/products.component';
 import { MatCardModule} from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +18,7 @@ import { TableModule } from 'primeng/table';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { RatingModule } from 'primeng/rating';
 import { PaginatorModule } from 'primeng/paginator';
+import { ProductsAdminComponent } from './admin/products-admin/products-admin.component';
 
 @NgModule({
   declarations: [AppComponent, ProductsAdminComponent, ProductsComponent, ProductCardComponent, ],
