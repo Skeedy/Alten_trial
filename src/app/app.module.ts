@@ -19,9 +19,14 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { RatingModule } from 'primeng/rating';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProductsAdminComponent } from './admin/products-admin/products-admin.component';
+import { ProducEditComponent } from './admin/produc-edit/produc-edit.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent, ProductsAdminComponent, ProductsComponent, ProductCardComponent, ],
+  declarations: [AppComponent, ProductsAdminComponent, ProductsComponent, ProductCardComponent, ProducEditComponent, ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -36,6 +41,10 @@ import { ProductsAdminComponent } from './admin/products-admin/products-admin.co
     TreeSelectModule,
     RatingModule,
     PaginatorModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
     NgbModule
   ],
   providers: [

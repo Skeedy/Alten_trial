@@ -20,11 +20,11 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productServ.getProducts().subscribe(data => {
       this.products = data;
-      this.getStatusFromProduct(this.products);
+      this.getCategoriesFromProducts(this.products);
     })
     
   }
-  getStatusFromProduct(products){
+  getCategoriesFromProducts(products){
     for(let i = 0; i < products.length; i++){
       if(!this.categories.includes(products[i].category)){
         this.categories.push(products[i].category);

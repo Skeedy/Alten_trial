@@ -15,13 +15,19 @@ export class ProductsAdminComponent implements OnInit {
   loading: boolean = false;
   products! : Product[];
   buttonDisabled = true;
-  
+  public categories = [];
+  public status = [];
+ 
+  showEdit = false;
+  productEdit: any;
+
   constructor(private productServ : ProductsService) { 
 
   }
 
   ngOnInit(): void {
     this.loading = true;
+    
   }
 
   loadProducts(event: LazyLoadEvent) {
@@ -32,6 +38,8 @@ export class ProductsAdminComponent implements OnInit {
             this.products = data;
             this.totalRecords = data.length;
             this.loading = false;
+            this.getCategoriesFromProducts(this.products);
+            this.getStatusFromProducts(this.products);
         });
     }, 1000);
 }
@@ -61,5 +69,19 @@ export class ProductsAdminComponent implements OnInit {
           this.selectAll = false;
           this.buttonDisabled = true;
       }
+  }
+  getCategoriesFromProducts(products){
+    for(let i = 0; i < products.length; i++){
+      if(!this.categories.includes(products[i].category)){
+        this.categories.push(products[i].category);
+      }
+    }
+  }
+  getStatusFromProducts(products){
+    for(let i = 0; i < products.length; i++){
+      if(!this.status.includes(products[i].inventoryStatus)){
+        this.status.push(products[i].inventoryStatus);
+      }
+    }
   }
 }

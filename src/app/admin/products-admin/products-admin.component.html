@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="d-flex justify-content-between">
+    <div class="m-2 xd-flex justify-content-between">
         <div>
             <button class="btn btn btn-success" style="margin-right: 5px;">
                 <div style="color: #FFF;" class="d-flex">
@@ -65,9 +65,15 @@
                 </td>
                 <td>{{ product.code }}</td>
                 <td>{{ product.name }}</td>
-                <td><button>Modifier</button></td>
+                <td>
+                    <button style="background-color: #FFF; color: blue; border: none" (click)="showEdit= !showEdit; productEdit= product;"><i class="material-icons">edit</i></button>
+                    <button style="background-color: #FFF; color: red; border: none"><i class="material-icons">delete</i></button>
+                </td>
             </tr>
         </ng-template>
         
     </p-table>
 </div>
+<app-produc-edit [edit]="showEdit" [product] = productEdit [categories]="categories" [status]="status">
+
+</app-produc-edit>
